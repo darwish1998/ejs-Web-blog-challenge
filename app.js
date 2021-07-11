@@ -67,7 +67,10 @@ app.get("/posts/:postName", function(req, res){
   const storedTitle = _.lowerCase(post.title);
 
   if(requistTitle === storedTitle) {
-    console.log("Match Found")
+    res.render("post", {
+      title: post.title ,
+      content: post.content
+    });
   }
   // else{
   //   console.log("Not Found");
